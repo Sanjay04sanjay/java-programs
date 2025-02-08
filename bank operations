@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Bank
+{  
+     Scanner input=new Scanner(System.in);
+   int acc_no;
+   
+   Float amt;
+   int deposit;
+   int withdraw;
+    Bank(int acc_no, Float amt){
+        
+        this.acc_no=acc_no;
+        this.amt=amt;
+    }
+    void display(){
+        System.out.println("account no : "+acc_no);
+        System.out.println("Amount  : "+amt);
+    }
+    void deposit(){
+       
+        System.out.println("Enter amount to deposit :");
+        int deposit=input.nextInt();
+        amt+=deposit;
+    }
+    void withdraw(){
+       
+        System.out.println("Enter amount to withdraw :");
+        int withdraw=input.nextInt();
+        amt-=withdraw;
+    }
+    
+	public static void main(String[] args) {
+	    Scanner input=new Scanner(System.in);
+		System.out.println("enter account number: ");
+		int acc_no=input.nextInt();
+		System.out.println("enter amount: ");
+		Float amt=input.nextFloat();
+	    Bank p=new Bank( acc_no,amt);
+	    p.display();
+	    System.out.println();
+	    System.out.println();
+	    p.deposit();
+	    System.out.println();
+	    p.withdraw();
+	    System.out.println();
+	    p.display();
+	}
+}
